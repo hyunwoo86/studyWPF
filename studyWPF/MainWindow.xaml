@@ -3,10 +3,58 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:studyWPF"
+        xmlns:local="clr-namespace:Basic"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <local:MainViewModel/>
+    </Window.DataContext>
+    <Window.Resources>
+        <DataTemplate x:Key="Man">
+            <StackPanel>
+                <TextBlock Text="{Binding Name}" FontSize="20" FontWeight="Bold" Foreground="SkyBlue"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding BirthDay}" Margin="10 5" FontSize="15"/>
+                    <TextBlock Text="{Binding Gender}" Margin="10 5" FontSize="15"/>
+                    <TextBlock Text="{Binding School}" Margin="10 5" FontSize="15"/>
+                </StackPanel>
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="Woman">
+            <StackPanel>
+                <TextBlock Text="{Binding Name}" FontSize="20" FontWeight="Bold" Foreground="HotPink" HorizontalAlignment="Right"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding BirthDay}" Margin="10 5" FontSize="15"/>
+                    <TextBlock Text="{Binding Gender}" Margin="10 5" FontSize="15"/>
+                    <TextBlock Text="{Binding School}" Margin="10 5" FontSize="15"/>
+                </StackPanel>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
     <Grid>
-        
+        <ListBox ItemsSource="{Binding Students}" 
+                 ItemTemplate="{StaticResource Man}">
+            <!--<ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Name}" FontSize="20" FontWeight="Bold" Foreground="HotPink"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding BirthDay}" Margin="10 5" FontSize="15"/>
+                            <TextBlock Text="{Binding Gender}" Margin="10 5" FontSize="15"/>
+                            <TextBlock Text="{Binding School}" Margin="10 5" FontSize="15"/>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>-->
+        </ListBox>
+
+        <!--<StackPanel>
+            <TextBlock Text="이름" FontSize="20" FontWeight="Bold" Foreground="HotPink"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="1990-10-1" Margin="10 5" FontSize="15"/>
+                <TextBlock Text="남" Margin="10 5" FontSize="15"/>
+                <TextBlock Text="대학교명" Margin="10 5" FontSize="15"/>
+            </StackPanel>
+        </StackPanel>-->
     </Grid>
 </Window>
