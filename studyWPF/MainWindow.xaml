@@ -41,8 +41,13 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
         <ListBox ItemsSource="{Binding Students}" 
-                 ItemTemplateSelector="{StaticResource itemSelector}">
+                 ItemTemplateSelector="{StaticResource itemSelector}"
+                 Grid.RowSpan="2">
             <!--<ListBox.ItemTemplate> 나중에 어디서 상속을 받는지 확인
                 <DataTemplate>
                     <StackPanel>
@@ -60,20 +65,38 @@
         <ContentControl Grid.Column="1" 
                         Content="{Binding CurrentViewModel}"/>
 
-        <ListBox ItemsSource="{Binding Students}" Grid.Column="2">
+        <ListBox ItemsSource="{Binding Students}" 
+                 Grid.Column="2" 
+                 Grid.RowSpan="2">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <TextBlock Text="{Binding Name}" FontSize="20" FontWeight="Bold" Foreground="HotPink"/>
+                        <TextBlock Text="{Binding Name}" 
+                                   FontSize="20" 
+                                   FontWeight="Bold" 
+                                   Foreground="HotPink"/>
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding BirthDay}" Margin="10 5" FontSize="15"/>
-                            <TextBlock Text="{Binding Gender}" Margin="10 5" FontSize="15"/>
-                            <TextBlock Text="{Binding School}" Margin="10 5" FontSize="15"/>
+                            <TextBlock Text="{Binding BirthDay}" 
+                                       Margin="10 5" 
+                                       FontSize="15"/>
+                            <TextBlock Text="{Binding Gender}" 
+                                       Margin="10 5" 
+                                       FontSize="15"/>
+                            <TextBlock Text="{Binding School}" 
+                                       Margin="10 5" 
+                                       FontSize="15"/>
                         </StackPanel>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+
+        <Button Grid.Row="2" 
+                Grid.Column="1"
+                Width="100"
+                Height="50"
+                Command="{Binding MyButtonCommand}"
+                />
 
     </Grid>
 </Window>
