@@ -31,11 +31,18 @@
                 </StackPanel>
             </StackPanel>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type local:CurrentViewModel}">
+            <local:TestView/>
+        </DataTemplate>
     </Window.Resources>
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         <ListBox ItemsSource="{Binding Students}" 
                  ItemTemplateSelector="{StaticResource itemSelector}">
-            <!--<ListBox.ItemTemplate>
+            <!--<ListBox.ItemTemplate> 나중에 어디서 상속을 받는지 확인
                 <DataTemplate>
                     <StackPanel>
                         <TextBlock Text="{Binding Name}" FontSize="20" FontWeight="Bold" Foreground="HotPink"/>
@@ -48,5 +55,9 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>-->
         </ListBox>
+
+        <ContentControl Grid.Column="1" 
+                        Content="{Binding CurrentViewModel}"/>
+
     </Grid>
 </Window>

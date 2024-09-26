@@ -13,8 +13,10 @@ namespace studyWPF
         public MainViewModel()
         {
             students = Student.Students;
+            CurrentViewModel = new CurrentViewModel();
         }
 
         public List<Student> Students { get => students; set { students = value; NotifyPropertyChanged(); } }
+        public ViewModelBase CurrentViewModel { get; set; }
     }
 }
