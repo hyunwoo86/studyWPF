@@ -16,3 +16,5 @@ D:\hyunwoo\Study\studyWPF\studyWPF\obj\Debug\studyWPF.pdb
 D:\hyunwoo\Study\studyWPF\studyWPF\obj\Debug\studyWPF.csprojAssemblyReference.cache
 D:\hyunwoo\Study\studyWPF\studyWPF\obj\Debug\TestView.g.cs
 D:\hyunwoo\Study\studyWPF\studyWPF\obj\Debug\TestView.baml
+D:\hyunwoo\Study\studyWPF\studyWPF\obj\Debug\SecondView.g.cs
+D:\hyunwoo\Study\studyWPF\studyWPF\obj\Debug\SecondView.baml

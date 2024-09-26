@@ -3,29 +3,49 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace studyWPF
 {
     class MainViewModel : ViewModelBase
     {
+        public ICommand ChangeColorCommand { get; }
+
         private List<Student> students;
-        public ICommand MyButtonCommand { get; }
+        public List<Student> Students
+        {
+            get => students;
+            set
+            {
+                students = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        private object _currentViewModel;
+        public object CurrentViewModel
+        {
+            get => _currentViewModel;
+            set
+            {
+                _currentViewModel = value;
+                NotifyPropertyChanged(nameof(CurrentViewModel));
+            }
+        }
 
         public MainViewModel()
         {
             students = Student.Students;
             CurrentViewModel = new CurrentViewModel();
-            MyButtonCommand = new RelayCommand(ChangeColorEvent);
-
+            ChangeColorCommand = new RelayCommand(ChangeColor);
         }
 
-        public List<Student> Students { get => students; set { students = value; NotifyPropertyChanged(); } }
-        public ViewModelBase CurrentViewModel { get; set; }
 
-        private void ChangeColorEvent(object parameter)
+        private void ChangeColor(object parameter)
         {
-            System.Windows.MessageBox.Show("Button Clicked!");
+            MessageBox.Show(".");
+            CurrentViewModel = new SecondViewModel();
         }
     }
 }

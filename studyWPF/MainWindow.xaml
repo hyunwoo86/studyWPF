@@ -34,6 +34,11 @@
         <DataTemplate DataType="{x:Type local:CurrentViewModel}">
             <local:TestView/>
         </DataTemplate>
+
+        <DataTemplate DataType="{x:Type local:SecondViewModel}">
+            <local:SecondView />
+        </DataTemplate>
+        
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -95,7 +100,7 @@
                 Grid.Column="1"
                 Width="100"
                 Height="50"
-                Command="{Binding MyButtonCommand}"
+                Command="{Binding ChangeColorCommand}"
                 />
 
     </Grid>
