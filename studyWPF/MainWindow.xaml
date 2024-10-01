@@ -7,6 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid>
+            <!-- 그리기 영역 -->
+            <Canvas Name="DrawingCanvas" Background="Transparent"
+                            MouseLeftButtonDown="Canvas_MouseLeftButtonDown"
+                MouseMove="Canvas_MouseMove"
+                MouseLeftButtonUp="Canvas_MouseLeftButtonUp"/>
+        </Grid>
     </Grid>
 </Window>
