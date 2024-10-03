@@ -7,6 +7,20 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+
+        <Button Grid.Row="0"
+                Margin="10"
+                FontSize="30"
+                Content="ControlTemplate 테스트!">
+        </Button>
+
+        <ComboBox Grid.Row="1"
+                  Margin="10"
+                  FontSize="30"
+                  ItemsSource="{Binding Items}"/>
     </Grid>
 </Window>
