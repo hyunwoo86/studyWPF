@@ -1,0 +1,15 @@
+C:\Hyunwoo\Study\studyWPF\studyWPF\studyWPF\bin\Debug\studyWPF.exe.config
+C:\Hyunwoo\Study\studyWPF\studyWPF\studyWPF\bin\Debug\studyWPF.exe
+C:\Hyunwoo\Study\studyWPF\studyWPF\studyWPF\bin\Debug\studyWPF.pdb
+C:\Hyunwoo\Study\studyWPF\studyWPF\studyWPF\obj\Debug\studyWPF.csproj.AssemblyReference.cache
+C:\Hyunwoo\Study\studyWPF\studyWPF\studyWPF\obj\Debug\MainWindow.g.cs
+C:\Hyunwoo\Study\studyWPF\studyWPF\studyWPF\obj\Debug\App.g.cs
+C:\Hyunwoo\Study\studyWPF\studyWPF\studyWPF\obj\Debug\studyWPF_MarkupCompile.cache
+C:\Hyunwoo\Study\studyWPF\studyWPF\studyWPF\obj\Debug\studyWPF_MarkupCompile.lref
+C:\Hyunwoo\Study\studyWPF\studyWPF\studyWPF\obj\Debug\MainWindow.baml
+C:\Hyunwoo\Study\studyWPF\studyWPF\studyWPF\obj\Debug\studyWPF.g.resources
+C:\Hyunwoo\Study\studyWPF\studyWPF\studyWPF\obj\Debug\studyWPF.Properties.Resources.resources
+C:\Hyunwoo\Study\studyWPF\studyWPF\studyWPF\obj\Debug\studyWPF.csproj.GenerateResource.cache
+C:\Hyunwoo\Study\studyWPF\studyWPF\studyWPF\obj\Debug\studyWPF.csproj.CoreCompileInputs.cache
+C:\Hyunwoo\Study\studyWPF\studyWPF\studyWPF\obj\Debug\studyWPF.exe
+C:\Hyunwoo\Study\studyWPF\studyWPF\studyWPF\obj\Debug\studyWPF.pdb
