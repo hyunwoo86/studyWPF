@@ -13,6 +13,7 @@ namespace studyWPF
         public MainViewModel()
         {
             Students = Student.Students;
+            CurrentViewModel = new TestViewModel();
         }
 
         public List<Student> Students 
@@ -24,5 +25,7 @@ namespace studyWPF
                 OnPropertyChanged();
             }
         }
+
+        public ViewModelBase CurrentViewModel { set; get; }
     }
 }
