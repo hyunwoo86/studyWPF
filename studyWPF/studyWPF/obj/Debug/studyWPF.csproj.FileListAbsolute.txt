@@ -14,5 +14,3 @@ C:\Hyunwoo\Study\studyWPF\studyWPF\studyWPF\obj\Debug\studyWPF.csproj.CoreCompil
 C:\Hyunwoo\Study\studyWPF\studyWPF\studyWPF\obj\Debug\studyWPF.exe
 C:\Hyunwoo\Study\studyWPF\studyWPF\studyWPF\obj\Debug\studyWPF.pdb
 C:\Hyunwoo\Study\studyWPF\studyWPF\studyWPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\Hyunwoo\Study\studyWPF\studyWPF\studyWPF\obj\Debug\TestView.g.cs
-C:\Hyunwoo\Study\studyWPF\studyWPF\studyWPF\obj\Debug\TestView.baml

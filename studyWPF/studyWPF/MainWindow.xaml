@@ -4,58 +4,65 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:studyWPF"
+        xmlns:vm="clr-namespace:studyWPF.ViewModels"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 
     <Window.DataContext>
-        <local:MainViewModel/>
+        <vm:MainViewModel/>
     </Window.DataContext>
 
     <Window.Resources>
-        <local:ItemSelector x:Key="ItemSelector"/>
-        <DataTemplate x:Key="Man">
-            <StackPanel>
-                <TextBlock Text="{Binding Name}" 
-                                    FontSize="20"
-                                    FontWeight="Bold"
-                                    Foreground="SkyBlue"/>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="{Binding Name}" Margin="10.5" FontSize="15"/>
-                    <TextBlock Text="{Binding Gender}" Margin="10.5" FontSize="15"/>
-                    <TextBlock Text="{Binding School}" Margin="10.5" FontSize="15"/>
-                </StackPanel>
-            </StackPanel>
-        </DataTemplate>
+        <ControlTemplate x:Key="CustomButton" TargetType="{x:Type Button}">
+            <Border BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="5"
+                            CornerRadius="10"
+                            Background="{TemplateBinding Background}">
+                <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"/>
+            </Border>
+        </ControlTemplate>
 
-        <DataTemplate x:Key="Womman">
-            <StackPanel>
-                <TextBlock Text="{Binding Name}" 
-                                    FontSize="20"
-                                    FontWeight="Bold"
-                                    Foreground="HotPink"
-                                    HorizontalAlignment="Right"/>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="{Binding Name}" Margin="10.5" FontSize="15"/>
-                    <TextBlock Text="{Binding Gender}" Margin="10.5" FontSize="15"/>
-                    <TextBlock Text="{Binding School}" Margin="10.5" FontSize="15"/>
-                </StackPanel>
-            </StackPanel>
-        </DataTemplate>
-
-        <DataTemplate DataType="{x:Type local:TestViewModel}">
-            <local:TestView/>
-        </DataTemplate>
-
+        <ControlTemplate x:Key="CustomList">
+            <TextBlock Text="{Binding Value}"
+                               Foreground="{Binding Brush}"/>
+        </ControlTemplate>
     </Window.Resources>
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <ListBox ItemsSource="{Binding Students}" 
-                 ItemTemplateSelector="{StaticResource ItemSelector}">
-        </ListBox>
 
-        <ContentControl Grid.Column="1" Content="{Binding CurrentViewModel}"/>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+
+        <Button Grid.Row="0"
+            Margin="10"
+            FontSize="30"
+                BorderBrush="Red"
+            Background="HotPink"
+            Template="{StaticResource CustomButton}"
+            Content="ControlTemplate 테스트!">
+        </Button>
+        <ComboBox Grid.Row="1"
+                  Margin="10"
+                  FontSize="30"
+                  ItemsSource="{Binding Items}">
+
+            <ComboBox.ItemContainerStyle>
+                <Style TargetType="{x:Type ComboBoxItem}">
+                    <Setter Property="Template" Value="{StaticResource CustomList}">
+                    </Setter>
+                </Style>
+            </ComboBox.ItemContainerStyle>
+            
+            <!--<ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Value}"
+                               Foreground="{Binding Brush}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>-->
+            
+        </ComboBox>
+
     </Grid>
 </Window>
