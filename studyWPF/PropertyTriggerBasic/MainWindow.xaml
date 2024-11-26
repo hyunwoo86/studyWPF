@@ -23,7 +23,22 @@
                             <Trigger Property="IsMouseOver" 
                                      Value="True">
                                 <Setter TargetName="border" 
-                                        Property="HorizontalAlignment"/>
+                                        Property="Background"
+                                        Value="Pink"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" 
+                                     Value="True">
+                                <Setter TargetName="border" 
+                                        Property="Background"
+                                        Value="DeepPink"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="border"
+                                        Property="Background"
+                                        Value="Black"/>
+                                <Setter TargetName="border"
+                                        Property="Control.Foreground"
+                                        Value="White"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -67,9 +82,11 @@
                 BorderBrush="Red"
                 Background="HotPink"
                 BorderThickness="10"
+                IsEnabled="False"
                 Content="ControlTemplate 테스트!"
                 Style="{StaticResource CustomButton}">
             
         </Button>
+        <Button Content="Button" Grid.Column="1" HorizontalAlignment="Left" Margin="150,35,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </Window>
