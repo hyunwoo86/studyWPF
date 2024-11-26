@@ -7,15 +7,28 @@
         xmlns:MyRadioButton="clr-namespace:studyWPF.Common"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <StackPanel>
-        <MyRadioButton:MyRadioButton>
-            <TextBlock Text="1. 감자"/>
-        </MyRadioButton:MyRadioButton>
-        <MyRadioButton:MyRadioButton>
-            <TextBlock Text="2. 고구마"/>
-        </MyRadioButton:MyRadioButton>
-        <MyRadioButton:MyRadioButton>
-            <TextBlock Text="3. 김치"/>
-        </MyRadioButton:MyRadioButton>
-    </StackPanel>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <StackPanel Grid.Row="0">
+            <MyRadioButton:MyRadioButton>
+                <TextBlock Text="1. 감자"/>
+            </MyRadioButton:MyRadioButton>
+            <MyRadioButton:MyRadioButton>
+                <TextBlock Text="2. 고구마"/>
+            </MyRadioButton:MyRadioButton>
+            <MyRadioButton:MyRadioButton>
+                <TextBlock Text="3. 김치"/>
+            </MyRadioButton:MyRadioButton>
+        </StackPanel>
+
+        <MyRadioButton:MyTextBox Grid.Row="1"/>
+        <!--<TextBox Grid.Row="1"
+                   FontSize="23"/>-->
+    </Grid>
+
 </Window>
