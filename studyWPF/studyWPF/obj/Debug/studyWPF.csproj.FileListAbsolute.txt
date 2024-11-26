@@ -30,3 +30,5 @@ D:\hyunwoo\Study\studyWPF\studyWPF\studyWPF\obj\Debug\studyWPF.Properties.Resour
 D:\hyunwoo\Study\studyWPF\studyWPF\studyWPF\obj\Debug\studyWPF.csproj.GenerateResource.cache
 D:\hyunwoo\Study\studyWPF\studyWPF\studyWPF\obj\Debug\studyWPF.csproj.CoreCompileInputs.cache
 D:\hyunwoo\Study\studyWPF\studyWPF\studyWPF\obj\Debug\Themes\Generic.baml
+C:\Hyunwoo\Study\studyWPF\studyWPF\studyWPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Hyunwoo\Study\studyWPF\studyWPF\studyWPF\obj\Debug\Themes\Generic.baml
