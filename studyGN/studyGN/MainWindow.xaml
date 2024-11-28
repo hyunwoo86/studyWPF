@@ -20,7 +20,7 @@
 
         <!--촬영 Thumbnail 표시-->
         <Grid Grid.Column="2">
-            <ListView Name="MyListView" 
+            <!--<ListView Name="MyListView" 
                       Background="Gray"
                       ItemsSource="{Binding Items}">
                 <ListView.ItemsPanel>
@@ -36,7 +36,36 @@
                         <Setter Property="VerticalContentAlignment" Value="Stretch" />
                     </Style>
                 </ListView.ItemContainerStyle>
+            </ListView>-->
+            <ListView Name="MyListView" 
+          Background="Gray"
+          ItemsSource="{Binding Items}">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Rows="10" Columns="2"/>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="Width" Value="100" />
+                        <Setter Property="Height" Value="150" />
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+                        <!-- ListViewItem의 템플릿 재정의 -->
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ListViewItem">
+                                    <Border Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ListView.ItemContainerStyle>
             </ListView>
+
         </Grid>
     </Grid>
 </Window>
