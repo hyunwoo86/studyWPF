@@ -69,6 +69,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Basic\NotifiyChangedBase.cs" />
+    <Compile Include="Basic\RelayCommand.cs" />
     <Compile Include="Common\Thumbnail.xaml.cs">
       <DependentUpon>Thumbnail.xaml</DependentUpon>
     </Compile>

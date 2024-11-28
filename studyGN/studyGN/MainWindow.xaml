@@ -62,6 +62,13 @@
                                 </ControlTemplate>
                             </Setter.Value>
                         </Setter>
+                        <!-- 트리거로 선택된 항목에 스타일 적용 --><!--
+                        <Style.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="BorderBrush" Value="Red" />
+                                <Setter Property="BorderThickness" Value="12" />
+                            </Trigger>
+                        </Style.Triggers>-->
                     </Style>
                 </ListView.ItemContainerStyle>
             </ListView>
