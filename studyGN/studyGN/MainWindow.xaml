@@ -14,14 +14,15 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="511*"/>
-            <ColumnDefinition Width="73*"/>
-            <ColumnDefinition Width="234*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
 
         <!--촬영 Thumbnail 표시-->
         <Grid Grid.Column="2">
-            <ListView Name="MyListView" ItemsSource="{Binding Items}">
+            <ListView Name="MyListView" 
+                      Background="Gray"
+                      ItemsSource="{Binding Items}">
                 <ListView.ItemsPanel>
                     <ItemsPanelTemplate>
                         <UniformGrid Rows="10" Columns="2"/>
