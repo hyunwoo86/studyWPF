@@ -11,14 +11,16 @@
     <Window.DataContext>
         <local:MainViewModel/>
     </Window.DataContext>
-    
+
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="0.3*"/>
+            <ColumnDefinition Width="511*"/>
+            <ColumnDefinition Width="73*"/>
+            <ColumnDefinition Width="234*"/>
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.Column="1">
+        <!--촬영 Thumbnail 표시-->
+        <Grid Grid.Column="2">
             <ListView Name="MyListView" ItemsSource="{Binding Items}">
                 <ListView.ItemsPanel>
                     <ItemsPanelTemplate>

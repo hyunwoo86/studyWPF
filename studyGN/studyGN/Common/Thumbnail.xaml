@@ -40,12 +40,12 @@
                             <ColumnDefinition Width="0.3*"/>
                         </Grid.ColumnDefinitions>
 
-                        <TextBlock Text="2D"
-                           Foreground="#A0A0A0"
-                           FontSize="7"
-                           FontWeight="Bold"
-                           HorizontalAlignment="Center"
-                           VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding OperationType}"
+                                   Foreground="#A0A0A0"
+                                   FontSize="7"
+                                   FontWeight="Bold"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
 
                         <Image Grid.Column="2"
                                Source="pack://application:,,,/Resources/send_off.png"
@@ -62,7 +62,7 @@
 
             <!--Foot-->
             <Grid Grid.Row="2">
-                <TextBlock Text="RCC"
+                <TextBlock Text="{Binding PositionType}"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
                            FontSize="9"

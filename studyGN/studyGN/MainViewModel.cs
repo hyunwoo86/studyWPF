@@ -17,13 +17,10 @@ namespace studyGN
             // 초기 데이터 설정
             Items = new ObservableCollection<Thumbnail>
             {
-                new Thumbnail(),
-                new Thumbnail(),
-                new Thumbnail(),
-                new Thumbnail(),
-                new Thumbnail(),
-                new Thumbnail(),
-                new Thumbnail(),
+                new Thumbnail(){ DataContext = new ThumbnailViewModel("TOMO", positionType: "RCC") },
+                new Thumbnail(){ DataContext = new ThumbnailViewModel("TOMO", positionType: "LCC") },
+                new Thumbnail(){ DataContext = new ThumbnailViewModel("2D", positionType: "RCC") },
+                new Thumbnail(){ DataContext = new ThumbnailViewModel("2D", positionType: "LCC") },
             };
         }
 
