@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using KabulTalk.Services;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace KabulTalk
 {
@@ -20,9 +8,16 @@ namespace KabulTalk
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow(ITestService testService)
         {
             InitializeComponent();
+
+            /* 결합도가 높은 상황 (직접 주입)  */
+            //ITestService service = new TestService();
+            //MessageBox.Show(service.GetString());
+
+            /* 결합도를 낮춘 상황 (DI 적용) */
+            MessageBox.Show(testService.GetString());
         }
     }
 }
