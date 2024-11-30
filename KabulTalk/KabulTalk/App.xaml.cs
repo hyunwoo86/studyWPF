@@ -1,11 +1,7 @@
 ﻿using KabulTalk.Services;
+using KabulTalk.Views;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace KabulTalk
@@ -15,13 +11,12 @@ namespace KabulTalk
         public App()
         {
             Services = ConfigureServices();
-
             Startup += App_Startup;
         }
 
         private void App_Startup(object sender, StartupEventArgs e)
         {
-            var mainView = App.Current.Services.GetService<MainWindow>();
+            var mainView = App.Current.Services.GetService<MainView>();
             mainView.Show();
         }
 
@@ -37,7 +32,7 @@ namespace KabulTalk
             services.AddSingleton<ITestService, TestService>(); // 결합도를 낮춰준다.
 
             // view
-            services.AddSingleton<MainWindow>();
+            services.AddSingleton<MainView>();
 
             return services.BuildServiceProvider();
         }
