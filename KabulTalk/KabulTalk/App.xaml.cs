@@ -1,4 +1,5 @@
 ﻿using KabulTalk.Services;
+using KabulTalk.ViewModels;
 using KabulTalk.Views;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -28,8 +29,14 @@ namespace KabulTalk
         {
             var services = new ServiceCollection();
 
+            // viewmodel
+            services.AddTransient<MainViewModel>();  // 매번 개체가 생성 될때마다 호출
+            services.AddTransient<LoginControlViewModel>();  // 매번 개체가 생성 될때마다 호출
+            services.AddTransient<ChangePwdControlViewModel>();  // 매번 개체가 생성 될때마다 호출
+            services.AddTransient<SignupControlViewModel>();  // 매번 개체가 생성 될때마다 호출
+
             // services
-            services.AddSingleton<ITestService, TestService>(); // 결합도를 낮춰준다.
+            //services.AddSingleton<ITestService, TestService>(); // 결합도를 낮춰준다.
 
             // view
             services.AddSingleton<MainView>();

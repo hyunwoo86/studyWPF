@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Hyunwoo\Study\studyWPF\KabulTalk\KabulTalk\App.xaml
-31520080967
+6-233098741
 
-111192734587
+18-291077277
 451767874923
-Controls\TitleBar.xaml;Styles\Colors.xaml;Views\MainView.xaml;
+Controls\ChangePwdControl.xaml;Controls\LoginControl.xaml;Controls\SignupControl.xaml;Controls\TitleBar.xaml;Styles\Colors.xaml;Views\MainView.xaml;
 
 True
 
