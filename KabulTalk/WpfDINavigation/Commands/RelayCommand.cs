@@ -3,39 +3,31 @@ using System.Windows.Input;
 
 namespace WpfDINavigation.Commands
 {
-    public class RelayCommand : ICommand
+    public class RelayCommand<T> : ICommand
     {
-        private readonly Predicate<object> _canExecute;
-        private readonly Action<object> _execute;
+        readonly Predicate<T> _canExecute;
+        readonly Action<T> _execute;
 
-        public event EventHandler CanExecuteChanged;
-
-        public RelayCommand(Action<object> execute)
-            : this(execute, null)
+        public RelayCommand(Action<T> action, Predicate<T> predicate)
+        {
+            _execute = action;
+            _canExecute = predicate;
+        }
+        public RelayCommand(Action<T> action) : this(action, null)
         {
         }
-
-        public RelayCommand(
-            Action<object> execute,
-            Predicate<object> canExecute)
+        public event EventHandler CanExecuteChanged
         {
-            _execute = execute;
-            _canExecute = canExecute;
+            add { CommandManager.RequerySuggested += value; }
+            remove { CommandManager.RequerySuggested -= value; }
         }
-
         public bool CanExecute(object parameter)
         {
-            return (_canExecute == null) || _canExecute(parameter);
+            return _canExecute == null ? true : _canExecute.Invoke((T)parameter);
         }
-
         public void Execute(object parameter)
         {
-            _execute(parameter);
-        }
-
-        public void CheckExecute()
-        {
-            CanExecuteChanged(this, EventArgs.Empty);
+            _execute.Invoke((T)parameter);
         }
     }
 }

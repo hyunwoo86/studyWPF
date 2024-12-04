@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Windows;
+using WpfDINavigation.Services;
+using WpfDINavigation.Stores;
 using WpfDINavigation.ViewModels;
 using WpfDINavigation.Views;
 
@@ -17,8 +19,17 @@ namespace WpfDINavigation
         {
             var services = new ServiceCollection();
 
+            // Stores
+            services.AddSingleton<MainNavigationStore>();
+
+            // Services
+            services.AddSingleton<INavigationService, NavigationService>();
+
             // ViewModels
             services.AddSingleton<MainViewModel>();
+            services.AddSingleton<LoginViewModel>();
+            services.AddSingleton<SignupViewModel>();
+            services.AddSingleton<TestViewModel>();
 
             // View
             services.AddSingleton(s => new MainView()
