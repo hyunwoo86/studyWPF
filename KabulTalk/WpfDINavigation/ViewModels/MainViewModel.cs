@@ -16,7 +16,7 @@ namespace WpfDINavigation.ViewModels
 
         private void CurrentViewModelChanged()
         {
-            _currentViewModel = _mainNavigationStore.CurrentViewModel;
+            CurrentViewModel = _mainNavigationStore.CurrentViewModel; // INotifyPropertyChanged 할 시, Property로 호출 해야 한다.
         }
 
         public MainViewModel(MainNavigationStore mainNavigationStore, INavigationService navigationService)
@@ -31,8 +31,12 @@ namespace WpfDINavigation.ViewModels
         {
             get { return _currentViewModel; }
             set
-            { _currentViewModel = value;
-                OnPropertyChanged();
+            {
+                if(_currentViewModel != value)
+                {
+                    _currentViewModel = value;
+                    OnPropertyChanged();
+                }
             }
         }
 

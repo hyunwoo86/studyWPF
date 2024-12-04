@@ -21,8 +21,8 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Button Command="{Binding ToLoginCommand}"
-                    Content="ToLogin"
+            <Button Command="{Binding ToSignupCommand}"
+                    Content="ToSignup"
                     Margin="5"/>
 
             <Button Grid.Column="1"
