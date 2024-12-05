@@ -96,6 +96,10 @@
     <Compile Include="Views\TestView.xaml.cs">
       <DependentUpon>TestView.xaml</DependentUpon>
     </Compile>
+    <Page Include="Styles\ButtonCommandStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\LgoinView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
