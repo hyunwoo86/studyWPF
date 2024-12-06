@@ -8,24 +8,24 @@ namespace WpfDINavigation.ViewModels
     {
         private readonly INavigationService _navigationService;
 
-        public ICommand ToSignupCommand { get; set; }
-        public ICommand ToTestCommand { get; set; }
+        public ICommand ToLoginCommand { get; set; }
+        public ICommand ToSignCommand { get; set; }
 
         public TestViewModel(INavigationService navigationService)
         {
-            ToSignupCommand = new RelayCommand<object>(ToSignup);
-            ToTestCommand = new RelayCommand<object>(ToTest);
+            ToLoginCommand = new RelayCommand<object>(ToLogin);
+            ToSignCommand = new RelayCommand<object>(ToSign);
             _navigationService = navigationService;
         }
 
-        private void ToSignup(object _)
+        private void ToLogin(object _)
         {
-            _navigationService.Navigate(NaviType.SignView);
+            _navigationService.Navigate(NaviType.LoginView);
         }
 
-        private void ToTest(object _)
+        private void ToSign(object _)
         {
-            _navigationService.Navigate(NaviType.TestView);
+            _navigationService.Navigate(NaviType.SignView);
         }
     }
 }

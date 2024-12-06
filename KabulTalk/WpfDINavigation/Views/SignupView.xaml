@@ -27,7 +27,7 @@
 
             <Button Grid.Column="1"
                     Command="{Binding ToTestCommand}"
-                    Content="ToLogin"
+                    Content="ToTest"
                     Margin="5"/>
         </Grid>
     </Grid>
