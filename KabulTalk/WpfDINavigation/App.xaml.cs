@@ -4,6 +4,7 @@ using System.Windows;
 using WpfDINavigation.Services;
 using WpfDINavigation.Stores;
 using WpfDINavigation.ViewModels;
+using WpfDINavigation.ViewModels.TestControlViewModels;
 using WpfDINavigation.Views;
 
 namespace WpfDINavigation
@@ -21,6 +22,9 @@ namespace WpfDINavigation
 
             // Stores
             services.AddSingleton<MainNavigationStore>();
+            services.AddSingleton<SignupStore>();
+            services.AddSingleton<LeftStore>();
+            services.AddSingleton<RightStore>();
 
             // Services
             services.AddSingleton<INavigationService, NavigationService>();
@@ -30,6 +34,8 @@ namespace WpfDINavigation
             services.AddSingleton<LoginViewModel>();
             services.AddSingleton<SignupViewModel>();
             services.AddSingleton<TestViewModel>();
+            services.AddTransient<LeftViewModel>();
+            services.AddTransient<RightViewModel>();
 
             // View
             services.AddSingleton(s => new MainView()

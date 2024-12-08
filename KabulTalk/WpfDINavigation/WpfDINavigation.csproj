@@ -71,13 +71,19 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="Models\Account.cs" />
     <Compile Include="Services\INavigationService.cs" />
     <Compile Include="Services\NavigationService.cs" />
     <Compile Include="Services\NaviType.cs" />
+    <Compile Include="Stores\LeftStore.cs" />
     <Compile Include="Stores\MainNavigationStore.cs" />
+    <Compile Include="Stores\RightStore.cs" />
+    <Compile Include="Stores\SignupStore.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\SignupViewModel.cs" />
+    <Compile Include="ViewModels\TestControlViewModels\LeftViewModel.cs" />
+    <Compile Include="ViewModels\TestControlViewModels\RightViewModel.cs" />
     <Compile Include="ViewModels\TestViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Views\LgoinView.xaml.cs">
@@ -92,6 +98,12 @@
     </Compile>
     <Compile Include="Views\SignupView.xaml.cs">
       <DependentUpon>SignupView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TestControls\LeftView.xaml.cs">
+      <DependentUpon>LeftView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TestControls\RightView.xaml.cs">
+      <DependentUpon>RightView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TestView.xaml.cs">
       <DependentUpon>TestView.xaml</DependentUpon>
@@ -109,6 +121,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\SignupView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TestControls\LeftView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TestControls\RightView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -144,8 +164,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
