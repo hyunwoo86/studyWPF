@@ -24,7 +24,59 @@
 
             <Button x:Name="BtnClose"
                     Cursor="Hand"
-                    Style="{StaticResource ButtonCloseStyle}"/>
+                    Style="{StaticResource ButtonCloseStyle}"
+                    Click="BtnClose_Click"/>
+
+            <Border Grid.Row="1"
+                    Opacity="0.9"
+                    CornerRadius="10"
+                    Margin="25 0 25 10">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0"
+                                         EndPoint="0,5">
+                        <GradientStop Color="#A4651d" Offset="0.0"/>
+                        <GradientStop Color="#e6d941" Offset="0.4"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+
+                <Border Grid.Row="1"
+                        Background="#d1dbe4"
+                        CornerRadius="10"
+                        Opacity="0.1"
+                        Margin="15"/>
+            </Border>
+
+            <Border Grid.Row="2"
+                        Background="#e4dbd1"
+                        Opacity="0.1"
+                        CornerRadius="40 40 10 10"/>
+
+            <DataGrid Grid.Row="1"
+                      x:Name="MyGrid"
+                      Margin="100 25 100 35" 
+                      Style="{DynamicResource DataGridStyle1}" 
+                      CellStyle="{DynamicResource DataGridCellStyle1}" 
+                      ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" 
+                      RowHeaderStyle="{DynamicResource DataGridRowHeaderStyle1}"
+                      RowStyle="{DynamicResource DataGridRowStyle1}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="First Name"
+                                        Width="*"
+                                        Binding="{Binding FirstName}"/>
+                    <DataGridTextColumn Header="Last Name"
+                                        Width="*"
+                                        Binding="{Binding LastName}"/>
+                    <DataGridTextColumn Header="Age"
+                                        Width="*"
+                                        Binding="{Binding Age}"/>
+                    <DataGridTextColumn Header="Nationality"
+                                        Width="*"
+                                        Binding="{Binding Nationality}"/>
+                    <DataGridTextColumn Header="Club"
+                                        Width="*"
+                                        Binding="{Binding Club}"/>
+                </DataGrid.Columns>
+            </DataGrid>
         </Grid>
     </Grid>
 </Window>
