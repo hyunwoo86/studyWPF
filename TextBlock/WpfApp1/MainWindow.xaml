@@ -13,7 +13,80 @@
     <Grid>
         <ScrollViewer 
                 Height="100"
-                Background="SkyBlue">
+                Background="SkyBlue" Template="{DynamicResource ScrollViewerControlTemplate1}">
+            <ScrollViewer.Resources>
+                <ControlTemplate x:Key="ScrollViewerControlTemplate1" TargetType="{x:Type ScrollViewer}">
+                    <Grid x:Name="Grid" Background="{TemplateBinding Background}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Rectangle x:Name="Corner" 
+                                   Grid.Column="1" 
+                                   Fill="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" 
+                                   Grid.Row="1"/>
+                        <ScrollContentPresenter x:Name="PART_ScrollContentPresenter" 
+                                                CanContentScroll="{TemplateBinding CanContentScroll}" 
+                                                CanHorizontallyScroll="False" 
+                                                CanVerticallyScroll="False" 
+                                                ContentTemplate="{TemplateBinding ContentTemplate}" 
+                                                Content="{TemplateBinding Content}" 
+                                                Grid.Column="0" 
+                                                Margin="{TemplateBinding Padding}" 
+                                                Grid.Row="0"/>
+
+                        <ScrollBar x:Name="PART_VerticalScrollBar" 
+                                   AutomationProperties.AutomationId="VerticalScrollBar" 
+                                   Cursor="Hand" 
+                                   Grid.Column="1"
+                                   Background="Transparent"
+                                   Maximum="{TemplateBinding ScrollableHeight}"
+                                   Minimum="0" 
+                                   Grid.Row="0" 
+                                   Width="100"
+                                   Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}" 
+                                   Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" 
+                                   ViewportSize="{TemplateBinding ViewportHeight}">
+                            <ScrollBar.Template>
+                                <ControlTemplate TargetType="ScrollBar">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+
+                                        <!-- 위 화살표 버튼 -->
+                                        <RepeatButton Grid.Row="0" 
+                                                      Command="ScrollBar.LineUpCommand" 
+                                                      Background="black" />
+
+                                        <!-- 스크롤 Thumb -->
+                                        <Track Grid.Row="1"
+                                                Name="PART_Track"
+                                                IsDirectionReversed="true">
+                                            <Track.Thumb>
+                                                <Thumb Background="LightBlue" />
+                                            </Track.Thumb>
+                                        </Track>
+
+                                        <!-- 아래 화살표 버튼 -->
+                                        <RepeatButton Grid.Row="2" 
+                                                      Command="ScrollBar.LineDownCommand"
+                                                      Background="LightGray" />
+                                    </Grid>
+                                </ControlTemplate>
+                            </ScrollBar.Template>
+                        </ScrollBar>
+                        
+
+                    </Grid>
+                </ControlTemplate>
+            </ScrollViewer.Resources>
             <local:BindableTextBlock BindableInlineList="{Binding BindableInlineList}" />
         </ScrollViewer>
     </Grid>
