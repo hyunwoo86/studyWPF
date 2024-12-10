@@ -11,7 +11,9 @@
     </Window.DataContext>
 
     <Grid>
-        <ScrollViewer>
+        <ScrollViewer 
+                Height="100"
+                Background="SkyBlue">
             <local:BindableTextBlock BindableInlineList="{Binding BindableInlineList}" />
         </ScrollViewer>
     </Grid>

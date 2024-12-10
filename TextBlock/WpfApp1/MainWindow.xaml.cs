@@ -25,16 +25,5 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
-
-        private void ScrollViewer_ScrollChanged(object sender, ScrollChangedEventArgs e)
-        {
-            //ScrollViewer scrollViewer = sender as ScrollViewer;
-
-            //if(!scrollViewer.IsMouseOver)
-            //{
-            //    scrollview.ScrollToBottom();
-            //}
-
-        }
     }
 }

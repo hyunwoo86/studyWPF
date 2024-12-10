@@ -27,8 +27,31 @@ namespace WpfApp1
             BindableInlineList = new ObservableCollection<Inline>
             {
                 new Run("Hello ") { Foreground = Brushes.Black },
+                new LineBreak(),
                 new Run("World!") { Foreground = Brushes.Red, FontSize = 22, }
             };
+
+            BindableInlineList.Add(new LineBreak());
+            BindableInlineList.Add(new Run("NEXT LINE!") { Foreground = Brushes.Red, FontSize = 22, });
+            BindableInlineList.Add(new LineBreak());
+            BindableInlineList.Add(new Run("NEXT LINE!") { Foreground = Brushes.Red, FontSize = 22, });
+            BindableInlineList.Add(new LineBreak());
+            BindableInlineList.Add(new Run("NEXT LINE!") { Foreground = Brushes.Red, FontSize = 22, });
+            BindableInlineList.Add(new LineBreak());
+            BindableInlineList.Add(new Run("NEXT LINE!") { Foreground = Brushes.Red, FontSize = 22, });
+            BindableInlineList.Add(new LineBreak());
+            BindableInlineList.Add(new Run("NEXT LINE!") { Foreground = Brushes.Red, FontSize = 22, });
+            BindableInlineList.Add(new LineBreak());
+            BindableInlineList.Add(new Run("NEXT LINE!") { Foreground = Brushes.Red, FontSize = 22, });
+            BindableInlineList.Add(new LineBreak());
+            BindableInlineList.Add(new LineBreak());
+            BindableInlineList.Add(new Run("NEXT LINE!") { Foreground = Brushes.Red, FontSize = 22, });
+            BindableInlineList.Add(new LineBreak());
+            BindableInlineList.Add(new Run("NEXT LINE!") { Foreground = Brushes.Red, FontSize = 22, });
+            BindableInlineList.Add(new LineBreak());
+            BindableInlineList.Add(new Run("NEXT LINE!") { Foreground = Brushes.Red, FontSize = 22, });
+
+            BindableInlineList.Add(new Run("NEXT LINE!") { Foreground = Brushes.Red, FontSize = 22, });
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
