@@ -1,6 +1,54 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:studyGN.Styles">
+
+
+    <Style TargetType="local:ImageButton" x:Key="ButtonImage">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:ImageButton}">
+                    <Border x:Name="BorderRoot"
+                        CornerRadius="20"
+                        Background="{TemplateBinding Background}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.7*"/>
+                                <ColumnDefinition Width="0.3*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!-- ContentPresenter는 첫 번째 열에 배치 -->
+                            <ContentPresenter Grid.Column="0"
+                                          x:Name="MyContentPresenter" 
+                                          Content="{TemplateBinding Content}" 
+                                          HorizontalAlignment="Center" 
+                                          VerticalAlignment="Center" 
+                                          Margin="0,0,0,0" />
+
+                            <!-- 두 번째 열에 이미지 배치 -->
+                            <!--Source="{Binding ImagePath, RelativeSource={RelativeSource TemplatedParent}}"-->
+                            <!--Source="{TemplateBinding ImagePath}"-->
+
+                            <Image Grid.Column="1"
+                                    Source="{Binding ImagePath, RelativeSource={RelativeSource TemplatedParent}}"
+                                 Stretch="Uniform" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center" 
+                               Margin="5" />
+                        </Grid>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{DynamicResource AccentBrush}"/>
+                            <Setter Property="BorderThickness" Value="10"/>
+                            <Setter Property="BorderBrush" Value="Black"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
     <Style TargetType="Button" x:Key="ButtonNormal">
         <Setter Property="Template">
             <Setter.Value>
@@ -17,7 +65,7 @@
                                               Margin="0,0,0,0" />
                         </Grid>
                     </Border>
-                    
+
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="Background" Value="{DynamicResource AccentBrush}"/>
@@ -25,7 +73,7 @@
                             <Setter Property="BorderBrush" Value="Black"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
-                    
+
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

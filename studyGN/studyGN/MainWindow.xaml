@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:studyGN"
+        xmlns:button="clr-namespace:studyGN.Styles"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
@@ -30,6 +31,14 @@
                 Margin="5 10 5 10"
                 Style="{StaticResource ButtonNormal}"
                 Content="Normal Base"/>
+
+        <button:ImageButton Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="5 10 5 10"
+                            Style="{StaticResource ButtonImage}"
+                            ImagePath="D:\hyunwoo\Study\studyWPF\studyGN\studyGN\images\ball.png"
+                            Content="button 2"/>
+        
 
         <Button Grid.Row="0" Grid.Column="2"
                 Content="asdfasdf">
