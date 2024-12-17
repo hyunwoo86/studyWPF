@@ -33,6 +33,7 @@ namespace studyGN
             services.AddTransient<MainView>();
 
             services.AddTransient<InitializeView>();
+            services.AddTransient<LoginView>();
 
             return services.BuildServiceProvider();
         }

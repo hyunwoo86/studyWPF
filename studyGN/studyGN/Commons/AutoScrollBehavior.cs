@@ -15,7 +15,7 @@ namespace studyGN.Commons
             if (scrollViewer != null && (bool)args.NewValue)
             {
                 scrollViewer.ScrollChanged += ScrollViewer_ScrollChanged;
-                scrollViewer.ScrollToEnd();
+                //scrollViewer.ScrollToEnd();
             }
             else
             {

@@ -24,6 +24,7 @@ namespace studyGN.Windowos
         private readonly Dictionary<string, InitializableUserControl> PageSelector = new Dictionary<string, InitializableUserControl>()
         {
             { "Initialize", new InitializeView() },
+            { "LoginView", new LoginView() },
         };
 
         private void MovePage(string route)
