@@ -82,6 +82,7 @@
     <Compile Include="Commons\BindTableTextBlock.cs" />
     <Compile Include="Commons\InitializableUserControl.cs" />
     <Compile Include="Commons\NotifiyChangedBase.cs" />
+    <Compile Include="Commons\RelayCommand.cs" />
     <Compile Include="UserControls\InitializeView.xaml.cs">
       <DependentUpon>InitializeView.xaml</DependentUpon>
     </Compile>

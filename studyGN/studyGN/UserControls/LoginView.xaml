@@ -11,7 +11,67 @@
     <cm:InitializableUserControl.DataContext>
         <mv:LoginViewModel/>
     </cm:InitializableUserControl.DataContext>
-    <Grid Background="LightGreen" Opacity="0.2">
-            
+
+
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="0.4*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Grid.ColumnSpan="7"
+            Source="..\Images\Hestia.png" 
+            Stretch="Fill"/>
+
+        <Grid Grid.Column="2" 
+            Grid.ColumnSpan="3">
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Image Grid.Row="1" 
+                   Source="..\Images\logo_1.png"/>
+
+
+            <TextBox Grid.Row="2"
+                     Grid.RowSpan="2"
+                     Text="로그인 화면"
+                     FontSize="20"/>
+        </Grid>
+
+        <Grid Grid.Column="6">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.8*"/>
+                <RowDefinition Height="0.2*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="0"
+                        Margin="10 30 10 30"
+                        Content="OK"/>
+
+                <Button Grid.Column="1"
+                        Margin="10 30 10 30"
+                        Content="Cancel"/>
+            </Grid>
+        </Grid>
+
     </Grid>
 </cm:InitializableUserControl>
