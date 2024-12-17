@@ -1,7 +1,9 @@
 ﻿using studyGN.Commons;
+using studyGN.Windowos;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Threading.Tasks;
+using System.Threading.Tasks.Dataflow;
 using System.Windows.Documents;
 using System.Windows.Media;
 
@@ -36,7 +38,7 @@ namespace studyGN.ViewModel
 
         private async void MakeInlineData()
         {
-            for(int count = 0; count < 25; count++)
+            for(int count = 0; count < 15; count++)
             {
                 BindableInlineList.Add(new Run("NEXT LINE!") { Foreground = Brushes.Black, FontSize = FONT_SIZE, });
                 BindableInlineList.Add(new LineBreak());
@@ -55,6 +57,8 @@ namespace studyGN.ViewModel
 
                 await Task.Delay(300);
             }
+
+            MainView.MovePageBlock.Post("LoginView"); // LoginView 이동
         }
 
     }

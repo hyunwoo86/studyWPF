@@ -11,7 +11,7 @@ namespace studyGN.Windowos
     /// </summary>
     public partial class MainView : Window
     {
-        private static readonly BroadcastBlock<string> MovePageBlock = new BroadcastBlock<string>(null);
+        public static readonly BroadcastBlock<string> MovePageBlock = new BroadcastBlock<string>(null);
 
         public MainView()
         {
