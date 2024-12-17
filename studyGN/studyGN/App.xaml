@@ -4,6 +4,12 @@
              xmlns:local="clr-namespace:studyGN"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!--themes-->
+                <ResourceDictionary Source="Themes/ViloletModeColor.xaml" />
+                
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
