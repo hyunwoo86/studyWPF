@@ -140,5 +140,13 @@
     <Folder Include="Icons\" />
     <Folder Include="Styles\" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Hestia.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\logo_1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

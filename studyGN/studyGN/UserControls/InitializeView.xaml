@@ -11,9 +11,37 @@
     <cm:InitializableUserControl.DataContext>
         <vm:InitializeViewModel/>
     </cm:InitializableUserControl.DataContext>
+
     <Grid>
-        <TextBlock Text="Initialize"
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center"/>    
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="0.4*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Grid.ColumnSpan="7"
+            Source="..\Images\Hestia.png" 
+            Stretch="Fill"/>
+
+        <Grid Grid.Column="2" 
+            Grid.ColumnSpan="3">
+
+            <StackPanel HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+
+                <Image Source="..\Images\logo_1.png"
+                       Margin="0 0 0 100"/>
+                
+                
+            </StackPanel>
+            
+        </Grid>
+
     </Grid>
+
 </cm:InitializableUserControl>
