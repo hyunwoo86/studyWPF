@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using studyGN.UserControls;
+using studyGN.Windowos;
 using System;
 using System.Windows;
 
@@ -17,7 +19,7 @@ namespace studyGN
 
         private void App_Startup(object sender, StartupEventArgs e)
         {
-            var mainView = App.Current.Services.GetService<MainWindow>();
+            var mainView = App.Current.Services.GetService<MainView>();
             mainView.Show();
         }
 
@@ -28,7 +30,9 @@ namespace studyGN
         private static IServiceProvider ConfigureServices()
         {
             var services = new ServiceCollection();
-            services.AddTransient<MainWindow>();
+            services.AddTransient<MainView>();
+
+            services.AddTransient<InitializeView>();
 
             return services.BuildServiceProvider();
         }

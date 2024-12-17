@@ -12,6 +12,8 @@
         <vm:InitializeViewModel/>
     </cm:InitializableUserControl.DataContext>
     <Grid>
-        <TextBlock Text="Initialize"/>
+        <TextBlock Text="Initialize"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"/>    
     </Grid>
 </cm:InitializableUserControl>
