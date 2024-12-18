@@ -30,6 +30,10 @@ namespace studyGN.ViewModel
             MakeInlineData(); // 임의로 테스트 하기 위해 만듦
         }
 
+        ~InitializeViewModel()
+        {
+        }
+
         private void OKButtonClickCommand()
         {
             MainView.MovePageBlock.Post("LoginView"); // LoginView 이동

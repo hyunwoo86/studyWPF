@@ -7,7 +7,9 @@
             <ResourceDictionary.MergedDictionaries>
                 <!--themes-->
                 <ResourceDictionary Source="Themes/ViloletModeColor.xaml" />
-                
+                <!--button style-->
+                <ResourceDictionary Source="Styles/ButtonStyle.xaml" />
+
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

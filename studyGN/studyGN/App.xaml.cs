@@ -30,10 +30,10 @@ namespace studyGN
         private static IServiceProvider ConfigureServices()
         {
             var services = new ServiceCollection();
-            services.AddTransient<MainView>();
+            services.AddSingleton<MainView>();
 
-            services.AddTransient<InitializeView>();
-            services.AddTransient<LoginView>();
+            services.AddSingleton<InitializeView>();
+            services.AddSingleton<LoginView>();
 
             return services.BuildServiceProvider();
         }
